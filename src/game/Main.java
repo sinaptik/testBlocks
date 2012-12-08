@@ -135,8 +135,6 @@ public class Main extends Applet implements Runnable, KeyListener
 		// TODO Auto-generated method stub
 	}
 	
-	
-
 	@Override
 	public void run() 
 	{

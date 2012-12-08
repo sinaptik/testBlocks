@@ -4,6 +4,7 @@ public class Particle
 {
 	private int x, y, speedX, speedY;
 	private boolean visible;
+	private int tick;
 	
 	public Particle(int startX, int startY)
 	{
@@ -29,11 +30,47 @@ public class Particle
 	
 	public void update()
 	{
-		x += speedX;
-		y += speedY;
+		updatePosition();
 		
 		checkCollisionsWithWalls();
 		
+		checkVisibility();
+		
+		decelerate();
+		
+		applyGravity();
+		
+		tick++;
+	}
+	
+	private void applyGravity()
+	{
+		if (tick % 100 == 0)
+		{
+			speedY++;
+		}
+	}
+	
+	private void decelerate()
+	{
+		if (tick % 100 == 0)
+		{
+			if (speedX > 0)
+				speedX--;
+			
+			if (speedY > 0)
+				speedY--;
+		}
+	}
+	
+	private void updatePosition()
+	{
+		x += speedX;
+		y += speedY;
+	}
+	
+	private void checkVisibility()
+	{
 		if (x > 800 || x < 0)
 		{
 			visible = false;

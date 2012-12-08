@@ -12,15 +12,19 @@ public class RandomEmitter extends Emitter
 	@Override
 	public void update(int step) 
 	{
+		if (step % 10 == 0)
+			emitParticle();
+		
+		super.update(step);
+	}
+	
+	public void emitParticle()
+	{
 		Random randomGenerator = new Random();
 		
 		//emit once every 1 steps
-		if (step % 1 == 0)
-		{
-			Particle p = new Particle(super.getCenterX(), super.getCenterY(), randomGenerator.nextInt(20) - 10, randomGenerator.nextInt(20) - 10);
-			super.particles.add(p);
-		}
-		
-		super.update(step);
+		Particle p = new Particle(super.getCenterX(), super.getCenterY(), randomGenerator.nextInt(20) - 10, randomGenerator.nextInt(20) - 10);
+		super.particles.add(p);
+
 	}
 }
