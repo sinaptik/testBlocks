@@ -4,7 +4,6 @@ import java.util.Random;
 
 public class RandomEmitter extends Emitter 
 {
-
 	public RandomEmitter(int startX, int startY) 
 	{
 		super(startX, startY);
@@ -24,5 +23,4 @@ public class RandomEmitter extends Emitter
 		
 		super.update(step);
 	}
-
 }

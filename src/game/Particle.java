@@ -32,6 +32,8 @@ public class Particle
 		x += speedX;
 		y += speedY;
 		
+		checkCollisionsWithWalls();
+		
 		if (x > 800 || x < 0)
 		{
 			visible = false;
@@ -40,6 +42,33 @@ public class Particle
 		if (y > 480 || y < 0)
 		{
 			visible = false;
+		}
+	}
+	
+	private void checkCollisionsWithWalls()
+	{
+		//right side
+		if (x == 800 || (x + speedX) > 800)
+		{
+			speedX = -speedX;
+		}
+		
+		//left side
+		if (x == 0 || (x + speedX) < 0)
+		{
+			speedX = -speedX;
+		}
+		
+		//top side
+		if (y == 0 || (y + speedY) < 0)
+		{
+			speedY = -speedY;
+		}
+		
+		//bottom side
+		if (y == 480 || (y + speedY) > 480)
+		{
+			speedY = -speedY;
 		}
 	}
 

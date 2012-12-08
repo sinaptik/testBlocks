@@ -46,7 +46,7 @@ public class Emitter
 	}
 
 	public void update(int step) 
-	{	
+	{		
 		for (int i = 0; i < particles.size(); i++) 
 		{
 			Particle p = (Particle) particles.get(i);

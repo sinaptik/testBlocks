@@ -68,6 +68,7 @@ public class Main extends Applet implements Runnable, KeyListener
 			g.fillRect(p.getX(), p.getY(), 2, 2);
 		}
 		
+		//paint emitter
 		g.setColor(Color.RED);
 		g.fillRect(emitter.getCenterX(), emitter.getCenterY(), 5, 5);
 	}
